@@ -1,0 +1,19 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @prison.banner_url %>);">
+  <div class="container">
+    <h1>Welcome to <%= @prison.name %></h1>
+    <p>Change your life commit a felony.</p>
+    <%= link_to 'Incarcerate', new_prison_criminal_path(@prison), class: 'btn btn-danger' %>
+  </div>
+</div>
+<div class="container mt-3">
+  <div class="cards">
+    <% @prison.criminals.each do |criminal| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= criminal.image_url %>%>)">
+        <%= criminal.name %>
+        <%= link_to criminal_path(criminal), data: { turbo_method: :delete, turbo_confirm: "Release #{criminal.name}?" }, class: 'card-remove-link' do %>
+          <i class="fa-solid fa-person-through-window"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
