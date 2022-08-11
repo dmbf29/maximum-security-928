@@ -8,11 +8,19 @@
 <div class="container mt-3">
   <div class="cards">
     <% @prison.criminals.each do |criminal| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= criminal.image_url %>%>)">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= criminal.image_url %>)">
         <%= criminal.name %>
         <%= link_to criminal_path(criminal), data: { turbo_method: :delete, turbo_confirm: "Release #{criminal.name}?" }, class: 'card-remove-link' do %>
           <i class="fa-solid fa-person-through-window"></i>
         <% end %>
+        <%= link_to new_criminal_conviction_path(criminal), class: 'card-convict-link' do %>
+          <i class="fa-solid fa-gavel"></i>
+        <% end %>
+        <div class="card-tags">
+          <% criminal.crimes.each do |crime| %>
+            <span><%= crime.name %></span>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>

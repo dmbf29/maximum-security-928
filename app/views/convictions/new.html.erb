@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>Add Crime</h1>
+  <%= simple_form_for [@criminal, @conviction] do |f| %>
+    <%= f.association :crime, as: :radio_buttons, include_blank: false, collection: @crimes %>
+    <%= f.submit 'Convict', class: 'btn btn-danger' %>
+  <% end %>
+</div>

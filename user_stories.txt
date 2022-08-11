@@ -1,4 +1,5 @@
 ✅ As a user I can see one prison's criminals - prisons#show
 ✅ As a user I can add a criminal into a prison
-As a user I can release a criminal
-criminals#destroy
+✅ As a user I can release a criminal
+
+As a user I can add a conviction to a criminal

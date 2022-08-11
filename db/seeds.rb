@@ -34,3 +34,13 @@ Criminal.create!(
   prison: azkaban
 )
 puts "... created #{Criminal.count} criminals"
+
+puts 'Creating crimes....'
+
+crimes = ['party animal', 'passion', 'hashing', 'poor style', 'horrible singer', 'tardiness', 'socks and sandals']
+crimes.each do |name|
+  Crime.create!(
+    name: name
+  )
+end
+puts "... created #{Crime.count} crimes"

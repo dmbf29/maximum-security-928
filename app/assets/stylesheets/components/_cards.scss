@@ -13,7 +13,20 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   position: relative;
 }
+.card-convict-link {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  text-decoration: none;
+  color: white;
+  opacity: 0.8;
 
+  &:hover {
+    color: white;
+    opacity: 1;
+    text-decoration: none;
+  }
+}
 .card-remove-link {
   position: absolute;
   top: 8px;
@@ -35,7 +48,7 @@
   width: 80%;
 
   span {
-    background: $blue;
+    background: $red;
     font-size: .7em;
     padding: 2px 4px;
     border-radius: 3px;
