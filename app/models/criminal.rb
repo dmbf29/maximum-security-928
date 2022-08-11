@@ -3,5 +3,5 @@ class Criminal < ApplicationRecord
   has_many :convictions, dependent: :destroy
   has_many :crimes, through: :convictions
   validates :name, presence: true
-  validates :image_url, presence: true
+  # validates :image_url, presence: true
 end
