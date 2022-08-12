@@ -47,6 +47,7 @@ gem "sassc-rails"
 
 # Custom Added
 gem "autoprefixer-rails"
+gem "cloudinary"
 gem "simple_form", github: "heartcombo/simple_form"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
