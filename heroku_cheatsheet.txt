@@ -21,6 +21,10 @@ heroku logs --tail
 heroku run any rails thing
 heroku run rails db:migrate
 
+# Add API key to Heroku
+ heroku config:set CLOUDINARY_URL=cloudinary://41***********:jwlOVbyyVfuEb9Ek3vhW2CoxPr4@dmbf29
+
+
 
 # Active Storage methods
 
