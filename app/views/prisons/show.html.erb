@@ -5,9 +5,6 @@
     <%= link_to 'Incarcerate', new_prison_criminal_path(@prison), class: 'btn btn-danger' %>
   </div>
 </div>
-<% josh = @prison.criminals.last %>
-<%= cl_image_path josh.photo.key,
-      width: 150, height: 150, crop: :thumb, gravity: :face %>
 <div class="container mt-3">
   <div class="cards">
     <% @prison.criminals.each do |criminal| %>
