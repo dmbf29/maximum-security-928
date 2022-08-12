@@ -1,0 +1,8 @@
+# To create an app
+heroku create app_name --region=us
+
+# To open in the browser
+heroku open
+
+# To check git connections to your app
+git remote -v
