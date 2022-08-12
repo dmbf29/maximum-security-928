@@ -5,10 +5,13 @@
     <%= link_to 'Incarcerate', new_prison_criminal_path(@prison), class: 'btn btn-danger' %>
   </div>
 </div>
+<% josh = @prison.criminals.last %>
+<%= cl_image_path josh.photo.key,
+      width: 150, height: 150, crop: :thumb, gravity: :face %>
 <div class="container mt-3">
   <div class="cards">
     <% @prison.criminals.each do |criminal| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= criminal.image_url %>)">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= criminal.photo.attached? ? cl_image_path(criminal.photo.key)  : criminal.image_url %>)">
         <%= criminal.name %>
         <%= link_to criminal_path(criminal), data: { turbo_method: :delete, turbo_confirm: "Release #{criminal.name}?" }, class: 'card-remove-link' do %>
           <i class="fa-solid fa-person-through-window"></i>

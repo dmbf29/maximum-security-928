@@ -12,7 +12,7 @@ git add .
 gc -m "new stuff"
 git push origin master
 git push heroku master
-heroku run rails db:migrate
+heroku run rails db:migrate (if necessary)
 
 # To check Heroku errors -> check the server logs (--tail will watch the app)
 heroku logs --tail
@@ -20,3 +20,10 @@ heroku logs --tail
 # How to run rails commands on Heroku
 heroku run any rails thing
 heroku run rails db:migrate
+
+
+# Active Storage methods
+
+instance.photo.key
+
+criminal.photo.attached?

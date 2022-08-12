@@ -2,7 +2,8 @@
   <h1><%= @prison.name %></h1>
   <%= simple_form_for [@prison, @criminal] do |f| %>
     <%= f.input :name %>
-    <%= f.input :image_url %>
+    <%#= f.input :image_url %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit 'Incacerate', class: 'btn btn-danger' %>
   <% end %>
 </div>
