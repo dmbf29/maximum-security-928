@@ -6,3 +6,17 @@ heroku open
 
 # To check git connections to your app
 git remote -v
+
+# New git flow when you make any changes in your app
+git add .
+gc -m "new stuff"
+git push origin master
+git push heroku master
+heroku run rails db:migrate
+
+# To check Heroku errors -> check the server logs (--tail will watch the app)
+heroku logs --tail
+
+# How to run rails commands on Heroku
+heroku run any rails thing
+heroku run rails db:migrate
